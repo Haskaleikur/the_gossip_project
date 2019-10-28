@@ -1,0 +1,12 @@
+<h1>Welcome <%=@params%> </h1>
+
+<% @gossips.each do |un_gossip| %>
+    <div class="card">
+       <div class="card-body">
+         <h5 class="card-title"><%= un_gossip.user.first_name %> <%= un_gossip.user.last_name %> <br></h5>
+         <p class="card-text"><p><%= un_gossip.title %> </p></p>
+         <button <a href="" class="card-link">Profile author</a></button>
+       </div>
+     </div>
+     <br>
+    <% end %>
