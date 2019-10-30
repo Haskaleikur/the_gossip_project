@@ -1,0 +1,21 @@
+<h1> Bienvenue sur la page des potins de THP </h1>
+
+<html>
+  <body>
+
+    <!-- ... -->
+
+    <%= form_tag gossips_path(action: 'index'), method: "get" do %>
+
+      <%= label_tag 'Identifiant' %>
+      <%= text_field_tag 'identifiant' %>
+      <br /> <br />
+
+      <%= submit_tag "C'est parti!" %>
+
+    <% end %>
+
+    <!-- ... -->
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<h1>Welcome <%=@first_name%> </h1>  
+
+<a href="<%= new_gossip_path %> "class=" btn btn-success">Créer un Gossip</a>
+
+
+<% @gossips.each do |un_gossip| %>
+    <div class="card">
+       <div class="card-body">
+         <h5 class="card-title"><%= un_gossip.user.first_name %> <%= un_gossip.user.last_name %> <br></h5>
+         <p class="card-text"><p><%= un_gossip.title %> </p>
+         <a href="<%= author_path(un_gossip.id) %>" class="btn btn-primary">infos</a>
+         <a href="<%= edit_gossip_path(un_gossip.id) %>" class=“btn btn-primary">modifier</a>
+         <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-danger" data-confirm="êtes vous sur?" data-method="DELETE" >supprimer</a>
+         <a href="<%= gossip_path(un_gossip.id) %>" class=“btn btn-primary">lire</a>
+         </p>
+         </div>          
+         </div>
+     </div>
+     <br>
+    <% end %>

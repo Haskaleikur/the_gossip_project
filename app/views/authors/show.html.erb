@@ -1,0 +1,12 @@
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Nom/prénom :<%=@user.first_name%><%=@user.last_name%></h5>
+    <h6 class="card-subtitle mb-2 text-muted">e-mail :<%=@user.email%>%></h6>
+    <p class="card-text">Description :<%=@user.description%></p>
+    <p class="card-link">âge :<%=@user.age%></p>
+    <p  class="card-link">Ville :<%=@user.city.name%></p>
+    <%= link_to "Retour", gossips_path, class: "btn btn-primary" %>       
+
+  </div>
+</div>

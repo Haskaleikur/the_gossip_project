@@ -8,6 +8,12 @@
 require 'faker'
 Faker::Config.locale = 'fr'
 
+#Création des villes
+
+10.times do
+  City.create(name: Faker::Address.city, zip_code: Faker::Address.postcode)
+end
+
 #Création de users
 
 10.times do
@@ -16,11 +22,6 @@ end
 
 
 
-#Création des villes
-
-10.times do
-  City.create(name: Faker::Address.city, zip_code: Faker::Address.postcode)
-end
 #Attribuer à chaque user une ville
 User.all.each do |my_user|
   my_user.city = City.all.sample

@@ -1,0 +1,39 @@
+<html>
+  <body>
+
+        <% if @gossip.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+        Le potin ne peut être créé pour la (ou les) raison(s) suivante(s) :
+      </div>
+          <ul>
+            <% @gossip.errors.full_messages.each do |message| %>
+              <div class="alert alert-danger" role="alert">
+              <li><%= message %></li>
+        <% end %>
+        </ul>
+      <% end %>
+
+    <!-- ... -->
+
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title' %>
+      <br /> <br />
+
+      <%= label_tag 'Body' %>
+      <%= text_area_tag 'body' %>
+      <br /> <br />
+
+      <%= label_tag 'Author' %>
+      <%= text_field_tag 'author', "Anonymous"%>
+      <br /> <br />
+
+      <%= submit_tag "Create Post" %>
+
+    <% end %>
+
+    <!-- ... -->
+
+  </body>
+</html>
