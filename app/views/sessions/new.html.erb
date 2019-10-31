@@ -3,12 +3,19 @@
 <html>
   <body>
 
+  <html>
+  <body>
+
     <!-- ... -->
 
-    <%= form_tag gossips_path(action: 'index'), method: "get" do %>
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
 
       <%= label_tag 'Identifiant' %>
       <%= text_field_tag 'identifiant' %>
+      <br /> <br />
+
+      <%= label_tag 'Password' %>
+      <%= text_field_tag 'password' %>
       <br /> <br />
 
       <%= submit_tag "C'est parti!" %>

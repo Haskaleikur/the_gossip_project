@@ -1,0 +1,48 @@
+<html>
+  <body>
+
+        <% if @user.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+        Le profil ne peut être créé pour la (ou les) raison(s) suivante(s) :
+      </div>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <div class="alert alert-danger" role="alert">
+              <li><%= message %></li>
+        <% end %>
+        </ul>
+      <% end %>
+
+    <!-- ... -->
+
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Prénom' %>
+      <%= text_field_tag 'prénom' %>
+      <br /> <br />
+
+      <%= label_tag 'Nom' %>
+      <%= text_field_tag 'nom' %>
+      <br /> <br />
+
+      <%= label_tag 'Âge' %>
+      <%= text_field_tag 'âge' %>
+      <br /> <br />
+
+      <%= label_tag 'Email' %>
+      <%= text_field_tag 'email' %>
+      <br /> <br />
+
+      <%= label_tag 'Password' %>
+      <%= text_field_tag 'password' %>
+      <br /> <br />
+
+
+      <%= submit_tag "Créer" %>
+
+    <% end %>
+
+    <!-- ... -->
+
+  </body>
+</html>

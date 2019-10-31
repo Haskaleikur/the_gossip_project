@@ -52,6 +52,23 @@ Gossip.all.each do |my_gossip|
 
 end
 
+#Création des Comments
+
+# 10.times do
+#   Comment.create(content: Faker::Books::Dune.quote)
+
+# end
+
+# #Attribuer des comments à des gossips
+
+# Gossip.all.each do |my_gossip|
+
+#   rand(1..5).times do
+#     Comment.create(comment_id: Comment.all.sample.id, gossip_id: my_gossip.id, user_id: User.all.sample.id)
+#   end
+
+# end
+
 
 #Création de private_messages  (un user a envoyé entre 0 et 5 messages (les destinataires de chaque messages entre 1 et 5))
 
@@ -60,7 +77,7 @@ User.all.each do |my_user|
   rand(0..5).times do
     #création du message
     m = PrivateMessage.create(content: Faker::TvShows::GameOfThrones.quote, sender_id: User.all.sample.id )
-    #Choix des destiantaires
+    #Choix des destinataires
     rand(1..5) do
       JoinTableMessageRecipient.create(recipient_id: User.all.sample.id, private_message_id: m.id)
     end

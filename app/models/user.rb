@@ -7,7 +7,8 @@ class User < ApplicationRecord
     presence: true
   
     validates :email,
-    presence: true
+    presence: true,
+    uniqueness: true
 
     validates :age,
     presence: true
@@ -16,4 +17,7 @@ class User < ApplicationRecord
   has_many :sent_messages, foreign_key: 'sender_id', class_name: "PrivateMessage"
   has_many :sent_messages, foreign_key: 'recipient_id', class_name: "JoinTableMessageRecipient"
   has_many :gossips
+  has_many :comments
+  has_secure_password
+
 end
