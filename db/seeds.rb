@@ -10,7 +10,7 @@ Faker::Config.locale = 'fr'
 
 #Création des villes
 
-10.times do
+20.times do
   City.create(name: Faker::Address.city, zip_code: Faker::Address.postcode)
 end
 
@@ -51,6 +51,23 @@ Gossip.all.each do |my_gossip|
   end
 
 end
+
+#Création des Comments
+
+# 10.times do
+#   Comment.create(content: Faker::Books::Dune.quote)
+
+# end
+
+# #Attribuer des comments à des gossips
+
+# Gossip.all.each do |my_gossip|
+
+#   rand(1..5).times do
+#     Comment.create(comment_id: Comment.all.sample.id, gossip_id: my_gossip.id, user_id: User.all.sample.id)
+#   end
+
+# end
 
 
 #Création de private_messages  (un user a envoyé entre 0 et 5 messages (les destinataires de chaque messages entre 1 et 5))
