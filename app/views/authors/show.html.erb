@@ -1,12 +1,21 @@
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Nom/prénom :<%=@user.first_name%><%=@user.last_name%></h5>
-    <h6 class="card-subtitle mb-2 text-muted">e-mail :<%=@user.email%>%></h6>
-    <p class="card-text">Description :<%=@user.description%></p>
-    <p class="card-link">âge :<%=@user.age%></p>
-    <p  class="card-link">Ville :<%=@user.city.name%></p>
-    <%= link_to "Retour", gossips_path, class: "btn btn-primary" %>       
-
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+    <div class="text-center">
+      <br>
+      <br>
+      <h1>This is the profile of <%=@user.first_name%></h1>
+      <br>
+      <br>
+  <div class="d-flex justify-content-center">
+    <div class="card border" style="width: 40rem; ">
+      <div class="card-body">
+          <h2 class="card-title"><%=@user.first_name%> <%=@user.last_name%></h2>
+          <p class="card-link">Age : <%=@user.age%> </p>
+          <p class="card-link">City : <%=@user.city.name%></p>
+          <p class="card-text">Email : <%=@user.email%></p>
+          <p class="card-subtitle mb-2 text-muted">Description : <%=@user.description%></p>
+          <%= link_to "Close the profile", gossips_path, class: "btn btn-primary rounded-pill" %>       
+      </div>
+    </div>
+    </div>
   </div>
 </div>

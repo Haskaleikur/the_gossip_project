@@ -1,17 +1,21 @@
-<p>Voici le contenu du potin n°<%= @gossip.id%></p>
-
-
-<div class="card" style="width: 45rem;">
-  <div class="card-body">
-    <h5 class="card-title">Autheur :<%=@gossip.user.first_name%>  <%=@gossip.user.last_name%></h5>
-    <br></br>
-    <h6 class="card-subtitle mb-2 ">Titre :<%=@gossip.title%></h6>
-    <br></br>
-    <p class="card-text">Contenu : <%=@gossip.content%></p>
-    <br></br>
-    <p  class="card-link">ville de l'auteur: <a href="<%= city_path(:id => @gossip.user.city_id) %>" class="btn btn-primary"><%=@gossip.user.city.name%></a>
-    </p>
-    <%= link_to "Retour", gossips_path, class: "btn btn-primary" %>       
-
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+          <br>
+          <br>
+          <br>
+  <div class="d-flex justify-content-center">
+    <div class="card" style="width: 45rem;">
+      <div class="card-body">
+          <br>
+          <h5 class="card-title">Author : <%=@gossip.user.first_name%>  <%=@gossip.user.last_name%></h5>
+          <br>
+          <h1><%= @gossip.title %></h1>
+          <p><%= @gossip.content %></p>
+          <p>
+          <a href="<%= gossips_path %>" class="btn btn-primary rounded-pill">Back to Gossip list</a>
+          <a href= "<%=author_path(:id => @gossip.user_id) %>" class="btn btn-outline-dark rounded-pill">Profile Author</a>
+          </p>
+      </div>
+    </div>
   </div>
 </div>
+

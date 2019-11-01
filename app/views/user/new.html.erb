@@ -1,6 +1,15 @@
-<html>
-  <body>
-
+ <div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <div class='container'>
+    <div class="text-center">
+    <br>
+    <br>
+    <br>
+    <h1>Amost on board<h1>
+      <h6>Last step, enter your informations.</h6>
+    <br>
+    <br>
+    <br>
+    </div>
         <% if @user.errors.any? %>
         <div class="alert alert-danger" role="alert">
         Le profil ne peut être créé pour la (ou les) raison(s) suivante(s) :
@@ -13,36 +22,38 @@
         </ul>
       <% end %>
 
-    <!-- ... -->
-
+    <div class="text-center"
+      <!-- ... -->
     <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-      <%= label_tag 'Prénom' %>
-      <%= text_field_tag 'prénom' %>
+      <%= label_tag '' %>
+      <%= text_field_tag 'prénom', "First name" %>
       <br /> <br />
 
-      <%= label_tag 'Nom' %>
-      <%= text_field_tag 'nom' %>
+      <%= label_tag '' %>
+      <%= text_field_tag 'nom', "Last name" %>
       <br /> <br />
 
-      <%= label_tag 'Âge' %>
-      <%= text_field_tag 'âge' %>
+      <%= label_tag '' %>
+      <%= text_field_tag 'âge', "Age" %>
       <br /> <br />
 
-      <%= label_tag 'Email' %>
-      <%= text_field_tag 'email' %>
+      <%= label_tag '' %>
+      <%= text_field_tag 'email', "Email" %>
       <br /> <br />
 
-      <%= label_tag 'Password' %>
-      <%= text_field_tag 'password' %>
+      <%= label_tag '' %>
+      <%= text_field_tag 'password', "Password" %>
       <br /> <br />
 
 
       <%= submit_tag "Créer" %>
 
     <% end %>
+      <!-- ... -->
+    </div>
 
-    <!-- ... -->
+  </div>
+</div>
 
-  </body>
-</html>
+

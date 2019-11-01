@@ -1,22 +1,33 @@
-<h2>Bienvenue <%= User.find_by(id: session[:user_id]).first_name %> !</h2>
-
-<a href="<%= new_gossip_path %> "class=" btn btn-success">Créer un Gossip</a>
-
-
-<% @gossips.each do |un_gossip| %>
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <div class="text-center">
+  <br>
+  <br>
+  <h1>Hello <%= User.find_by(id: session[:user_id]).first_name %> !<h1>
+  <br>
+  <a href="<%= new_gossip_path %> "class=" btn btn-outline-success rounded-pill">New Gossip</a>
+  </div>
+  <br>
+  <br>
+  <div class='container'>
+    <div class="card-columns">
+    <% @gossips.each do |un_gossip| %>
     <div class="card">
-       <div class="card-body">
-         <h5 class="card-title"><%= un_gossip.user.first_name %> <%= un_gossip.user.last_name %> <br></h5>
-         <p class="card-text"><p><%= un_gossip.title %> </p>
-         <a href="<%= author_path(:id => un_gossip.user_id) %>" class="btn btn-primary">infos</a>
-         <% unless session[:user_id] != un_gossip.user_id %>
-         <a href="<%= edit_gossip_path(un_gossip.id) %>" class=“btn btn-primary">modifier</a>
-         <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-danger" data-confirm="êtes vous sur?" data-method="DELETE" >supprimer</a>
-         <% end %>
-         <a href="<%= gossip_path(un_gossip.id) %>" class=“btn btn-primary">lire</a>
-         </p>
-         </div>          
-         </div>
-     </div>
-     <br>
+      <div class="card-body">
+      <h5 class="card-title"><%= un_gossip.user.first_name %> <%= un_gossip.user.last_name %> <a href= "<%=author_path(:id => un_gossip.user_id) %>" class="btn btn-outline-dark rounded-pill">Profile Author</a></h5>
+        <p class="card-text"><p><%= un_gossip.title %> </p></p><p><%= un_gossip.content %></p>
+        <p>
+          <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-outline-primary rounded-pill">Read more</a>
+          <% unless session[:user_id] != un_gossip.user_id %>
+          <a href="<%= edit_gossip_path(un_gossip.id) %>" class="btn btn-outline-primary rounded-pill">Edit</a>
+          <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-outline-danger rounded-pill" data-confirm="Do you want to delete?" data-method="DELETE" >Delete</a>
+          <% end %>
+        </p>
+      </div>
+    </div>
     <% end %>
+    </div>
+  </div>
+</div>
+
+
+

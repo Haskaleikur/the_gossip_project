@@ -1,28 +1,32 @@
-<h1>Modifier le gossip</h1>
-<br></br>
-<%= form_for @gossip do |change| %>
-
-    <div class "form_group">
-
-        <label> Titre du Gossip </label>
-
-        <%= change.text_field :title, class: 'form-control' %>
-
-     </div>
-     <br></br>
-     <div class "form_group">
-
-     <label> Contenu du Gossip </label>
-
-     <%= change.text_field :content, class: 'form-control' %>
-
-    </div>
-    <br></br>
-
-    <div class "form-group">
-
-        <button type="submit" class="btn btn-primary">Modifier l'article</button>
-
-    </div>
-
-        <% end %>
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h1>Edit Gossip</h1>
+  <br>
+  <br>
+  <br>
+  <div class="d-flex justify-content-center">
+  <%= form_for @gossip do |change| %>
+      <div class="form-row align-items-center">
+          <div class="col-md-6 mb-3">
+            <h4>The Title</h4>
+            <label class="sr-only" for="inlineFormInputName">Name</label>
+              <%= change.text_field :title, class: "form-control rounded-pill" %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h4>The Gossip</h4>
+            <label class="sr-only" for="inlineFormInputGossip">Gossip</label>
+              <%= change.text_field :content, class: "form-control rounded-pill"%>
+          </div>
+      </div>
+      <div class="col-auto my-1">
+        <a href="<%= gossips_path %>" class="btn btn-outline-dark rounded-pill">Undo</a>
+        <button type="submit" class="btn btn-primary rounded-pill">Edit</button>
+      </div>
+  </form>
+  <% end %>
+  </div>
+  </div>
+</div>

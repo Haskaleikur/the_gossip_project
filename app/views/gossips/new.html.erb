@@ -1,10 +1,15 @@
-<html>
-  <body>
-
-        <% if @gossip.errors.any? %>
+<div class="jumbotron jumbotron-fluid jumbotron-hero">
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h1>Please enter the title and your gossip</h1>
+  <br>
+  <br>
+  <br>
+   <% if @gossip.errors.any? %>
         <div class="alert alert-danger" role="alert">
         Le potin ne peut être créé pour la (ou les) raison(s) suivante(s) :
-      </div>
           <ul>
             <% @gossip.errors.full_messages.each do |message| %>
               <div class="alert alert-danger" role="alert">
@@ -13,27 +18,24 @@
         </ul>
       <% end %>
 
-    <!-- ... -->
-
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
-
-      <%= label_tag 'Title' %>
-      <%= text_field_tag 'title' %>
-      <br /> <br />
-
-      <%= label_tag 'Body' %>
-      <%= text_area_tag 'body' %>
-      <br /> <br />
-
-      <%= label_tag 'Author' %>
-      <%= text_field_tag 'author', "Anonymous"%>
-      <br /> <br />
-
-      <%= submit_tag "Create Post" %>
-
+    <div class="text-center"
+        <!-- ... -->
+      <%= form_tag url_for(action: 'create'), method: "post" do %>          
+            <h4>The Title</h4>
+            <%= label_tag '' %>
+            <%= text_field_tag 'title' %>
+          
+            <h4>The Gossip</h4>
+            <%= label_tag '' %>
+            <%= text_area_tag 'body' %>
+          
+            <h4>Author</h4>
+            <%= label_tag '' %>
+            <%= text_field_tag 'author', "Anonymous"%>
+          
+        <%= submit_tag "Create Post" %>
     <% end %>
-
     <!-- ... -->
-
-  </body>
-</html>
+    </div>
+  </div>
+</div>

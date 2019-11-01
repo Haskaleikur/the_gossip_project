@@ -14,4 +14,18 @@
  *= require_self
  */
 
-h1 {color: blue}
+.jumbotron-hero { 
+
+  margin-top: -70px;
+  margin-bottom: -150px;
+  
+}
+
+h1
+{
+   color:black;
+}
+
+body {
+  font-family: 'Varela Round', cursive;
+}

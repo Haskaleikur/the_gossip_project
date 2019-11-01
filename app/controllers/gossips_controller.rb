@@ -40,11 +40,12 @@ class GossipsController < ApplicationController
       end
     
       def destroy
-
         @gossip = Gossip.find(params[:id])
+        JoinTableGossipTag.where(gossip_id: @gossip.id).find_each do |gt|
+        gt.destroy
+        end
         @gossip.destroy
         redirect_to gossips_path
-
       end
 
       private
