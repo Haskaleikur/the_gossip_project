@@ -14,18 +14,29 @@
  *= require_self
  */
 
-.jumbotron-hero { 
 
-  margin-top: -96px;
-  margin-bottom: -150px;
-  
-}
-
-h1
-{
-   color:black;
-}
 
 body {
   font-family: 'Varela Round', cursive;
+}
+
+
+.jumbotron { 
+
+
+
+  background-image: url("/assets/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg");
+  margin-top: -96px;
+  margin-bottom: -150px;
+  
+  background-position: center;
+  background-size: cover; 
+  background-attachment: fixed ;
+
+}
+
+footer {
+
+  margin-top: 80px;
+
 }
