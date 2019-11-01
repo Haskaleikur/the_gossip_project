@@ -23,8 +23,6 @@ body {
 
 .jumbotron { 
 
-
-
   background-image: url("/assets/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg");
   margin-top: -96px;
   margin-bottom: -150px;
@@ -38,5 +36,11 @@ body {
 footer {
 
   margin-top: 80px;
+
+}
+
+h1 {
+
+  font-family: 'Staatliches', cursive;
 
 }
