@@ -10,19 +10,20 @@
     <br>
     </div>
     
-    <div class="text-center"
+    <div class="d-flex justify-content-center">
     <!-- ... -->
     <%= form_tag url_for(action: 'create'), method: "post" do %>
 
       <%= label_tag '' %>
-      <%= text_field_tag 'identifiant', "Login" %>
-      <br /> <br />
-
+      <%= text_field_tag 'identifiant', "Login", class:'form-control rounded-pill' %>
+    
       <%= label_tag '' %>
-      <%= text_field_tag 'password', "Password" %>
+      <%= text_field_tag 'password', "Password", class:'form-control rounded-pill' %>
       <br /> <br />
-
-      <%= submit_tag "Let's Go" %>
+      
+      <div class="text-center">
+      <%= submit_tag "Let's Go", class:'btn-lg btn-primary rounded-pill' %>
+      </div>
 
     <% end %>
     <!-- ... -->

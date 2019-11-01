@@ -12,7 +12,7 @@
     </div>
         <% if @user.errors.any? %>
         <div class="alert alert-danger" role="alert">
-        Le profil ne peut être créé pour la (ou les) raison(s) suivante(s) :
+        Something went wrong because :
       </div>
           <ul>
             <% @user.errors.full_messages.each do |message| %>
@@ -22,38 +22,41 @@
         </ul>
       <% end %>
 
-    <div class="text-center"
+  <div class="container">
       <!-- ... -->
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <%= label_tag '' %>
+          <%= text_field_tag 'prénom', "First name", class:'form-control rounded-pill' %>
+        </div>
 
-      <%= label_tag '' %>
-      <%= text_field_tag 'prénom', "First name" %>
-      <br /> <br />
+        <div class="col-md-4 mb-3">
+          <%= label_tag '' %>
+          <%= text_field_tag 'nom', "Last name", class:'form-control rounded-pill' %>
+        </div>
 
-      <%= label_tag '' %>
-      <%= text_field_tag 'nom', "Last name" %>
-      <br /> <br />
+        <div class="col-md-4 mb-3">
+          <%= label_tag '' %>
+          <%= text_field_tag 'âge', "Age", class:'form-control rounded-pill' %>
+        </div>
 
-      <%= label_tag '' %>
-      <%= text_field_tag 'âge', "Age" %>
-      <br /> <br />
+        <div class="col-md-4 mb-3">
+          <%= label_tag '' %>
+          <%= text_field_tag 'email', "Email", class:'form-control rounded-pill' %>
+        </div>
 
-      <%= label_tag '' %>
-      <%= text_field_tag 'email', "Email" %>
-      <br /> <br />
-
-      <%= label_tag '' %>
-      <%= text_field_tag 'password', "Password" %>
-      <br /> <br />
-
-
-      <%= submit_tag "Créer" %>
-
-    <% end %>
-      <!-- ... -->
+        <div class="col-md-4 mb-3">
+          <%= label_tag '' %>
+          <%= text_field_tag 'password', "Password", class:'form-control rounded-pill' %>
+          <br /> <br />
+        </div>
     </div>
-
+        <div class="text-center">
+          <%= submit_tag "Sign Up", class:'btn-lg btn-primary rounded-pill' %>
+        </div>    
+      <% end %>
+      <!-- ... -->
+  </div>
   </div>
 </div>
-
-

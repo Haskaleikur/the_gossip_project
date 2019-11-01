@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>The Gossip Project</title>
-    <link rel="shortcut icon" href="/assets/gossip.png">
+    <link rel="shortcut icon" href="/assets/images/G.png">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/8813a93217.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
@@ -24,14 +24,15 @@
     <a class="mr-md-auto navbar-brand" href="http://localhost:3000/sessions" title="Home"><img style="max-width:50px; margin-top: -14px;" src="/assets/gossip.png"></a>
     
     <nav class="my-2 my-md-0 mr-md-10">
-        <a href="<%=new_gossip_path  %>" class ="btn btn-primary rounded-pill">New Post</a>
-        <a class="p-2 text-dark" href="http://localhost:3000/team">Team</a>
-        <a class="p-2 text-dark" href="http://localhost:3000/contact">Contact</a>
+        <a href="<%=new_gossip_path  %>" class ="btn btn-outline rounded-pill">New Post</a>
+        <a href="<%=gossips_path  %>" class ="btn btn-outline rounded-pill">Goss!p</a>
+        <a class="btn btn-outline rounded-pill" href="http://localhost:3000/team">Team</a>
+        <a class="btn btn-outline rounded-pill" href="http://localhost:3000/contact">Contact</a>
         <% if  current_user%>
-        <%= link_to "Log out", session_path(session.id), method: :delete %>
+        <%= link_to "Log out", session_path(session.id), method: :delete, class:"btn btn-outline-light rounded-pill" %>
         <% end %>
         <% unless current_user %>
-        <%= link_to "Sign up", new_user_path %>
+        <%= link_to "Sign up", new_user_path, class:"btn btn-outline-light rounded-pill" %>
         <% end %>
     </nav>
 </div>
@@ -41,3 +42,6 @@
   </body>
 
 </html>
+
+
+
