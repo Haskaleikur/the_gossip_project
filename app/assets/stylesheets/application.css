@@ -1,46 +1,77 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+  /*
+  * This is a manifest file that'll be compiled into application.css, which will include all the files
+  * listed below.
+  *
+  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+  * vendor/assets/stylesheets directory can be referenced here using a relative path.
+  *
+  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+  * files in this directory. Styles in this file should be added after the last require_* statement.
+  * It is generally better to create a new file per style scope.
+  *
+  *= require_tree .
+  *= require_self
+  */
 
 
 
-body {
-  font-family: 'Varela Round', cursive;
+  body {
+    font-family: 'Varela Round', cursive;
+    cursor: url("https://www.shareicon.net/data/32x32/2016/09/13/828462_search_512x512.png"), pointer;
+  }
+
+
+  .jumbotron { 
+
+    background-image: url("/assets/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg");
+    margin-top: -96px;
+    margin-bottom: -150px;
+    
+    background-position: center;
+    background-size: cover; 
+    background-attachment: fixed ;
+
+  }
+
+  footer {
+    margin-top: 80px;
+  }
+
+  h1 {
+    font-family: 'Staatliches', cursive;
+  }
+
+  .card {
+    border-radius: 25px;
+    background: linear-gradient(to right bottom, #e6edfa, #e9edfc, #ececfd, #f1ebfd, #f6eafd, #faeaf9, #fdeaf6, #ffeaf2, #ffedee, #fff0eb, #fff4ea, #fef8ec);
+  }
+
+  .btn {
+        font-family: 'Anton', cursive;
+  }
+
+  .btn:hover {
+    background-position: right center; 
+  }
+
+  .btn-1 {
+    background: linear-gradient(to right bottom, #f66d08, #f87a09, #fa860d, #fc9213, #fd9e1a, #fda51a, #fdad1c, #fcb41e, #f9ba18, #f6bf12, #f2c50c, #eeca07);
+  }
+
+  .btn-2 {
+    background: linear-gradient(to left top, #8bf8f9, #77faf5, #63fcee, #4ffde6, #3bfedc, #26fed0, #0ffdc3, #00fcb4, #00f9a0, #00f68b, #00f273, #07ee58);
+  }
+
+  .btn-3 {
+    background: linear-gradient(to right bottom, #9696f7, #86a1fb, #7aabfb, #72b4fa, #71bcf6, #7dbff8, #88c1f9, #92c4fb, #a9c3ff, #c0c1ff, #d7bffe, #ecbdf8);
+  }
+
+  .btn-4 {
+  background: linear-gradient(to right bottom, #fc6573, #fb6574, #f96575, #f86575, #f66576, #f6697a, #f66c7e, #f67082, #f7788b, #f88093, #f9879b, #fa8fa3);
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;
 }
 
-
-.jumbotron { 
-
-  background-image: url("/assets/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg");
-  margin-top: -96px;
-  margin-bottom: -150px;
-  
-  background-position: center;
-  background-size: cover; 
-  background-attachment: fixed ;
-
-}
-
-footer {
-
-  margin-top: 80px;
-
-}
-
-h1 {
-
-  font-family: 'Staatliches', cursive;
-
-}
+  .btn-5 {
+    background: linear-gradient(to right bottom, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+  }

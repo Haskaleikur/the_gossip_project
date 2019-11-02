@@ -14,7 +14,7 @@
           <h1><%= @gossip.title %></h1>
           <p><%= @gossip.content %></p>
           <p>
-          <a href="<%= gossips_path %>" class="btn btn-primary rounded-pill">Back to Gossip list</a>
+          <a href="<%= gossips_path %>" class="btn btn-3 rounded-pill">Back to Gossips</a>
           <a href= "<%=author_path(:id => @gossip.user_id) %>" class="btn btn-outline-dark rounded-pill">Profile Author</a>
           </p>
           
