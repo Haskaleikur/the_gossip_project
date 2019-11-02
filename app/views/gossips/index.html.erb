@@ -3,7 +3,7 @@
   <br>
   <br>
   <h1>Hello <%= User.find_by(id: session[:user_id]).first_name %> !<h1>
-    <h5><i>What'up today ?</i></h5>
+    <h5><i>Hey ! What's up today ?</i></h5>
   <br>
   <a href="<%= new_gossip_path %>" class="btn btn-1 btn-lg rounded-pill">New Gossip</a>
   </div>
@@ -23,7 +23,7 @@
           <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-outline btn-3 rounded-pill">Read more</a>
           <% unless session[:user_id] != un_gossip.user_id %>
           <a href="<%= edit_gossip_path(un_gossip.id) %>" class="btn btn-2 rounded-pill">Edit</a>
-          <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-4 rounded-pill" data-confirm="Do you want to delete?" data-method="DELETE" >Delete</a>
+          <a href="<%= gossip_path(un_gossip.id) %>" class="btn btn-4 rounded-pill" data-confirm="Do you really want to delete?" data-method="DELETE" >Delete</a>
           <% end %>
         </p>
       </div>
